@@ -34,5 +34,6 @@
   abu: 5.0,
   ibu: 20
 }].each do |beer|
-  Beer.find_or_create_by!(beer)
+  beer = Beer.find_or_create_by!(beer)
+  beer.kegs.find_or_create_by!(capacity_ml: 5000)
 end
