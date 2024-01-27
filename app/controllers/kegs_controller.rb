@@ -2,11 +2,11 @@
 
 class KegsController < ApplicationController
   def show
-    @keg = Keg.find(params[:id])
+    @keg = Beer.find(params[:beer_id]).kegs.first
   end
 
   def update
-    @keg = Keg.find(params[:id])
+    @keg = Beer.find(params[:beer_id]).kegs.first
     if @keg.update(keg_params)
       render :show, status: :ok, location: @keg
     else

@@ -4,7 +4,7 @@ class BeersController < ApplicationController
   before_action :set_beer, only: %i[show update destroy]
 
   def index
-    @beers = Beer.all
+    @beers = Beer.includes(:kegs).all
   end
 
   def show; end
