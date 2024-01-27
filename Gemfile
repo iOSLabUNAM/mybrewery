@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.3.0"
 
+gem "litestack", "~> 0.4.2"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.1.3"
 gem "sqlite3", "~> 1.4"
@@ -19,11 +20,10 @@ group :development, :test do
 end
 
 group :development do
+  gem "dockerfile-rails", ">= 1.6"
   gem "rubocop", require: false
   gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   # gem "spring"
 end
-
-gem "litestack", "~> 0.4.2"
